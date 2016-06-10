@@ -1,4 +1,4 @@
-### ESB clustred deployment ###
+### This repository contains WSO2 ESB 4.9.0 Worker/manager separated clustering deployment pattern with Docker compose ###
 
 ![alt tag](https://docs.wso2.com/download/attachments/47525837/ClusterESB.png)
 
