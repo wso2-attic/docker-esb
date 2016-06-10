@@ -2,15 +2,13 @@
 
 ![alt tag](https://docs.wso2.com/download/attachments/47525837/ClusterESB.png)
 
-Following instructions will help you to setup the deployment
-
- Execute 
+#### How to run
  
  ``` docker login dockerhub.private.wso2.com ```
  
  ```docker-compose up```
 
-This will setup 
+This will deploy the following,
 
 * Mysql server (container) with esbdb
 * SVN server (container) and create svn repo
