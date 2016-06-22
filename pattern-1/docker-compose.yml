@@ -18,7 +18,7 @@ services:
       context: .
       dockerfile: esb-manager/Dockerfile
     environment:
-      - SLEEP=5
+      - SLEEP=25
   worker1:
     container_name: esb_worker1
     depends_on: 
@@ -28,7 +28,7 @@ services:
       context: .
       dockerfile: esb-worker/Dockerfile
     environment:
-      - SLEEP=20
+      - SLEEP=50
   nginx:
     container_name: nginx
     depends_on: 
