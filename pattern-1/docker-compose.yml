@@ -28,14 +28,27 @@ services:
       context: .
       dockerfile: esb-worker/Dockerfile
     environment:
-      - SLEEP=50
+      - SLEEP=75
+  worker2:
+    container_name: esb_worker2
+    depends_on: 
+      - dbms
+      - manager
+      - worker1
+    build:
+      context: .
+      dockerfile: esb-worker2/Dockerfile
+    environment:
+      - SLEEP=125
   nginx:
     container_name: nginx
     depends_on: 
       - manager
       - worker1
+      - worker2
     links:
       - worker1:esb.wso2.org
+      - worker2:esb.wso2.org
       - worker1:ssl.esb.wso2.org
       - manager:mgt.esb.wso2.org
     build:
@@ -44,3 +57,4 @@ services:
     ports:
       - "443:443"
       - "80:80"
+

@@ -13,7 +13,7 @@ This will deploy the following,
 * Mysql server (container) with esbdb
 * SVN server (container) and create svn repo
 * ESB-Manager runs on a container
-* ESB-Worker runs on a container and clustred with ESB-Manager node
+* ESB-Workers runs on containers and clustred with ESB-Manager node
 * Nginx Load Balancer container and add ESB enpoints
 
 #### How to test

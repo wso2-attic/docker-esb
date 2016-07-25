@@ -535,7 +535,7 @@
         The TCP port used by this member. This is the port through which other nodes will
         contact this member
          -->
-        <parameter name="localMemberPort">4000</parameter>
+        <parameter name="localMemberPort">4002</parameter>
 
         <!--
             The bind port of this member. The difference between localMemberPort & localMemberBindPort
@@ -568,10 +568,13 @@
         <members>
             <member>
                 <hostName>esb_manager</hostName>
-                <port>4000</port>
+                <port>4001</port>
+            </member>
+            <member>
+                <hostName>esb_worker2</hostName>
+                <port>4003</port>
             </member>
         </members>
-
         <!--
         Enable the groupManagement entry if you need to run this node as a cluster manager.
         Multiple application domains with different GroupManagementAgent implementations
