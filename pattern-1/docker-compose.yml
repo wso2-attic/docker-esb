@@ -54,6 +54,8 @@ services:
     build:
       context: .
       dockerfile: nginx/Dockerfile
+    environment:
+      - SLEEP=30
     ports:
       - "443:443"
       - "80:80"
