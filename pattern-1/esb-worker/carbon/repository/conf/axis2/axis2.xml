@@ -535,7 +535,7 @@
         The TCP port used by this member. This is the port through which other nodes will
         contact this member
          -->
-        <parameter name="localMemberPort">4002</parameter>
+        <parameter name="localMemberPort">4000</parameter>
 
         <!--
             The bind port of this member. The difference between localMemberPort & localMemberBindPort
@@ -568,11 +568,11 @@
         <members>
             <member>
                 <hostName>esb_manager</hostName>
-                <port>4001</port>
+                <port>4000</port>
             </member>
             <member>
                 <hostName>esb_worker2</hostName>
-                <port>4003</port>
+                <port>4000</port>
             </member>
         </members>
         <!--
