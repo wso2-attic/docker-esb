@@ -10,11 +10,11 @@ services:
   svnrepo:
     container_name: svnrepo
     image: dockerhub.private.wso2.com/svnrepo
-  am-analytics:
+  esb-analytics:
     container_name: esb-analytics
     build:
-      context: ../
-      dockerfile: pattern-1/esb-analytics/Dockerfile
+      context: .
+      dockerfile: esb-analytics/Dockerfile
     environment:
       - SLEEP=5
   manager:
@@ -25,39 +25,40 @@ services:
       context: .
       dockerfile: esb-manager/Dockerfile
     environment:
-      - SLEEP=25
+      - SLEEP=60
+    links:
+      - nginx:esb.wso2.org
+      - nginx:mgt.esb.wso2.org
   worker1:
     container_name: esb_worker1
-    depends_on: 
+    depends_on:
       - dbms
       - manager
+      - esb-analytics
     build:
       context: .
-      dockerfile: esb-worker/Dockerfile
+      dockerfile: esb-worker1/Dockerfile
     environment:
-      - SLEEP=75
+      - SLEEP=100
+    links:
+      - nginx:esb.wso2.org
+      - nginx:mgt.esb.wso2.org
   worker2:
     container_name: esb_worker2
-    depends_on: 
+    depends_on:
       - dbms
       - manager
-      - worker1
+      - esb-analytics
+    links:
+      - nginx:esb.wso2.org
+      - nginx:mgt.esb.wso2.org
     build:
       context: .
       dockerfile: esb-worker2/Dockerfile
     environment:
-      - SLEEP=125
+      - SLEEP=150
   nginx:
     container_name: nginx
-    depends_on: 
-      - manager
-      - worker1
-      - worker2
-    links:
-      - worker1:esb.wso2.org
-      - worker2:esb.wso2.org
-      - worker1:ssl.esb.wso2.org
-      - manager:mgt.esb.wso2.org
     build:
       context: .
       dockerfile: nginx/Dockerfile

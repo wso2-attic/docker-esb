@@ -14,6 +14,7 @@ This will deploy the following,
 * SVN server (container) and create svn repo
 * ESB-Manager runs on a container
 * ESB-Workers runs on containers and clustred with ESB-Manager node
+* ESB Analytics runs on a container
 * Nginx Load Balancer container and add ESB enpoints
 
 #### How to test
@@ -33,3 +34,8 @@ ESB Management console
 https://mgt.esb.wso2.org/carbon
 ```
 
+ESB Analytics Management console
+
+```
+https://mgt.esb.wso2.org/carbon
+```

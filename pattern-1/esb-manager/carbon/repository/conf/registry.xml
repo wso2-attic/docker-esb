@@ -30,11 +30,11 @@
     <dbConfig name="wso2registry">
         <dataSource>jdbc/WSO2CarbonDB</dataSource>
     </dbConfig>
-   
+
 <dbConfig name="sharedregistry">
     <dataSource>jdbc/WSO2RegistryDB</dataSource>
 </dbConfig>
- 
+
 <remoteInstance url="https://localhost:9443/registry">
     <id>instanceid</id>
     <dbConfig>sharedregistry</dbConfig>
@@ -43,18 +43,18 @@
     <registryRoot>/</registryRoot>
     <cacheId>regadmin@jdbc:mysql://esb_rdbms:3306/ESB_DB?autoReconnect=true</cacheId>
 </remoteInstance>
- 
+
 <mount path="/_system/config" overwrite="true">
     <instanceId>instanceid</instanceId>
     <targetPath>/_system/asNodes</targetPath>
 </mount>
- 
+
 <mount path="/_system/governance" overwrite="true">
     <instanceId>instanceid</instanceId>
     <targetPath>/_system/governance</targetPath>
 </mount>
 
- 
+
     <indexingConfiguration>
         <startIndexing>true</startIndexing>
         <startingDelayInSeconds>35</startingDelayInSeconds>
