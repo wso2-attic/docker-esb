@@ -7,4 +7,4 @@ COPY artifacts/mysql-connector-java-5.1.34-bin.jar /mnt/wso2-artifacts/repositor
 COPY artifacts/svnkit-all-1.8.7.wso2v1.jar /mnt/wso2-artifacts/repository/components/dropins/
 COPY artifacts/trilead-ssh2-1.0.0-build215.jar /mnt/wso2-artifacts/repository/components/lib/
 
-RUN rm -r /mnt/wso2esb-5.0.0/repository/deploymkent/server/event*
+RUN rm -r /mnt/wso2esb-5.0.0/repository/deployment/server/event*

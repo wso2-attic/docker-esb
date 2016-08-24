@@ -37,5 +37,5 @@ https://mgt.esb.wso2.org/carbon
 ESB Analytics Management console
 
 ```
-https://mgt.esb.wso2.org/carbon
+https://mgt.esb-analytics.wso2.org:9444/carbon
 ```
