@@ -23,6 +23,7 @@ Add the following entries to the /etc/hosts
 ```
 127.0.0.1 mgt.esb.wso2.org
 127.0.0.1 esb.wso2.org
+127.0.0.1 mgt.esb-analytics.wso2.org
 ```
 If you are using docker machine, please use the docker machine IP instead of the local machine IP.
 
