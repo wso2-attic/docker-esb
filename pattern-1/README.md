@@ -1,6 +1,6 @@
 ### This repository contains WSO2 ESB 5.0.0 Worker/manager separated clustering deployment pattern with Docker compose ###
 
-![alt tag](https://docs.wso2.com/download/attachments/47525837/ClusterESB.png)
+![alt tag](https://github.com/wso2-support/deployment-patterns/blob/master/wso2esb/5.0.0/design/esb-5.0-pattern-1.png)
 
 #### How to run
  
