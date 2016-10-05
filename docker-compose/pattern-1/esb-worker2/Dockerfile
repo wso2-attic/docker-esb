@@ -1,4 +1,4 @@
-FROM dockerhub.private.wso2.com/wso2esb:5.0.0
+FROM docker.wso2.com/wso2esb:5.0.0
 
 
 COPY esb-worker2/carbon/ /mnt/wso2-artifacts
