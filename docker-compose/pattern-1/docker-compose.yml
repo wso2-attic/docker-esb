@@ -1,7 +1,6 @@
 version: '2'
 services:
   dbms:
-    container_name: esb_rdbms
     build: 
         context: .
         dockerfile: database/Dockerfile

@@ -41,7 +41,7 @@
     <readOnly>false</readOnly>
     <enableCache>true</enableCache>
     <registryRoot>/</registryRoot>
-    <cacheId>regadmin@jdbc:mysql://esb_rdbms:3306/ESB_DB?autoReconnect=true</cacheId>
+    <cacheId>regadmin@jdbc:mysql://dbms:3306/ESB_DB?autoReconnect=true</cacheId>
 </remoteInstance>
 
 <mount path="/_system/config" overwrite="true">
