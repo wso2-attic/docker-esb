@@ -82,11 +82,14 @@ Copy pattern2.dab file to docker swarm manager node and run following
 
 To deploy all docker services on swarm cluster
 ```
-docker deploy pattern2
+docker deploy pattern1
 ```
 To update AWS ELB endpoits
 ```
-docker service update --publish-add 9444:9444 pattern2_am-analytics
+docker service update --publish-add 9444:9444 pattern2_esb-analytics
+docker service update --publish-add 9443:9443 pattern2_esb-namaner
+docker service update --publish-add 8243:8243 pattern2_esb-worker
+docker service update --publish-add 8280:8280 pattern2_esb-worker
 ```
 #### How to access the environment
 Update your DNS (or add host entries) by poining "esb-manager","esb-worker" and "esb-analytics" domain names to AWS ELB IP.  
@@ -100,8 +103,7 @@ https://esb-manager/carbon
 https://esb-worker/
 ```
 
-
-```
 ESB Analytics
 ```
 https://esb-analytics:9444/carbon/
+```
