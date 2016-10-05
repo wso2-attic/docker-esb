@@ -96,11 +96,11 @@ Update your DNS (or add host entries) by poining "esb-manager","esb-worker" and 
 
 
 ```
-https://esb-manager/carbon
+https://esb-manager:9443/carbon
 ```
 
 ```
-https://esb-worker/
+https://esb-worker:8243/
 ```
 
 ESB Analytics
