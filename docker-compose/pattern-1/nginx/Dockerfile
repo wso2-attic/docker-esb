@@ -1,4 +1,4 @@
-FROM dockerhub.private.wso2.com/nginx
+FROM docker.wso2.com/nginx
 
 COPY nginx/esbconfigs.conf /etc/nginx/conf.d/
 COPY nginx/mgt.crt /etc/nginx/ssl/
