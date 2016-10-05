@@ -1,4 +1,4 @@
-FROM dockerhub.private.wso2.com/wso2esb-analytics:5.0.0
+FROM docker.wso2.com/wso2esb-analytics:5.0.0
 
 COPY esb-analytics/carbon/ /mnt/wso2-artifacts
 
