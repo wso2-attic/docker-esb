@@ -9,7 +9,7 @@ services:
         MYSQL_ROOT_PASSWORD: root
   svnrepo:
     container_name: svnrepo
-    image: dockerhub.private.wso2.com/svnrepo
+    image: docker.wso2.com/svnrepo
   esb-analytics:
     container_name: esb-analytics
     build:
