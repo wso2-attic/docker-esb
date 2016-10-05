@@ -1,0 +1,39 @@
+version: '2'
+services:
+  dbms:
+    image: docker.wso2.com/swarm-esb-pattern1-mysql:5.5
+    build: 
+        context: .
+        dockerfile: database/Dockerfile
+    environment:
+        MYSQL_ROOT_PASSWORD: root
+  svnrepo:
+    image: docker.wso2.com/svnrepo
+  esb-analytics:
+    image: docker.wso2.com/swarm-esb-pattern1-esb-analytics:5.0.0
+    build:
+      context: .
+      dockerfile: esb-analytics/Dockerfile
+    environment:
+      - SLEEP=5
+  esb_manager:
+    image: docker.wso2.com/swarm-esb-pattern1-esb-manager:5.0.0
+    depends_on: 
+      - dbms
+    build:
+      context: .
+      dockerfile: esb-manager/Dockerfile
+    environment:
+      - SLEEP=60
+  esb_worker1:
+    image: docker.wso2.com/swarm-esb-pattern1-esb-worker:5.0.0
+    depends_on:
+      - dbms
+      - esb_manager
+      - esb-analytics
+    build:
+      context: .
+      dockerfile: esb-worker1/Dockerfile
+    environment:
+      - SLEEP=100
+

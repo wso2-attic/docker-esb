@@ -1,0 +1,47 @@
+{
+  "Services": {
+    "dbms": {
+      "Env": [
+        "MYSQL_ROOT_PASSWORD=root"
+      ], 
+      "Image": "docker.wso2.com/swarm-esb-pattern1-mysql@sha256:33b68b6ac020e2c718b6339cf047d5ca52df9b8c9b6b049d2ae0a57669b89718", 
+      "Networks": [
+        "default"
+      ]
+    }, 
+    "esb-analytics": {
+      "Env": [
+        "SLEEP=5"
+      ], 
+      "Image": "docker.wso2.com/swarm-esb-pattern1-esb-analytics@sha256:f65168f93f5c1f82f29f65800ba9bc6ce3e750ff91da5fdc7c65edb06ece1a66", 
+      "Networks": [
+        "default"
+      ]
+    }, 
+    "esb_manager": {
+      "Env": [
+        "SLEEP=60"
+      ], 
+      "Image": "docker.wso2.com/swarm-esb-pattern1-esb-manager@sha256:2f3a246556af34c8d291c0bba3d75be62bea4c40e862195bfde4d958f032079b", 
+      "Networks": [
+        "default"
+      ]
+    }, 
+    "esb_worker1": {
+      "Env": [
+        "SLEEP=100"
+      ], 
+      "Image": "docker.wso2.com/swarm-esb-pattern1-esb-worker@sha256:3e80a81a0eec9bea86be2fbe4befc50f88db41a553db877004804e724d18fbef", 
+      "Networks": [
+        "default"
+      ]
+    }, 
+    "svnrepo": {
+      "Image": "docker.wso2.com/svnrepo@sha256:dbacceabd8dd1dca7db23f189869a9ed390bbb14cbf86350c7d455ded4d71ba9", 
+      "Networks": [
+        "default"
+      ]
+    }
+  }, 
+  "Version": "0.1"
+}

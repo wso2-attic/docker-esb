@@ -16,7 +16,7 @@ services:
       dockerfile: esb-analytics/Dockerfile
     environment:
       - SLEEP=5
-  manager:
+  esb_manager:
     container_name: esb_manager
     depends_on: 
       - dbms
@@ -28,11 +28,11 @@ services:
     links:
       - nginx:esb.wso2.org
       - nginx:mgt.esb.wso2.org
-  worker1:
+  esb_worker1:
     container_name: esb_worker1
     depends_on:
       - dbms
-      - manager
+      - esb_manager
       - esb-analytics
     build:
       context: .
@@ -42,11 +42,11 @@ services:
     links:
       - nginx:esb.wso2.org
       - nginx:mgt.esb.wso2.org
-  worker2:
+  esb_worker2:
     container_name: esb_worker2
     depends_on:
       - dbms
-      - manager
+      - esb_manager
       - esb-analytics
     links:
       - nginx:esb.wso2.org
